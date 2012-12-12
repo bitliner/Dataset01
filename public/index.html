@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en" ng-app>
+<head>
+	<title></title>
+	<script type="text/javascript" src="/underscore-min.js"></script>
+	<script src="/angular.min.js"></script>
+	<script src="/js/controllers.js"></script>
+	<script src="/js/service.js"></script>
+	<script src="/js/angular-resource.js"></script>
+	
+	<link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap-responsive.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body ng-controller="DatasetCtrl" style="margin:0;">
+	<div class="container">
+
+		<div class="page-header">
+			<h1>Dataset <small>for «feature|opinion word» extraction from sentences  
+				<span class="btn pull-right"><a href="/test_set.json">Download as JSON</a></span></small></h1>
+			<!-- <p class="small">Language: It </p> -->
+
+				<span class="label label-info">lang: It</span>
+			
+		</div>
+
+		<div class="row">
+			<div class="span8 offset2">
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>Text</th>
+							<th>Feature</th>
+							<th>Opinion Word</th>
+							<th>POS tag</th>
+						</tr>
+					</thead>
+					<tr ng-repeat="row in rows">
+						<td>{{ row.text  }}</td>
+						<td>{{ row.feature }}</td>
+						<td>{{ row.opinionWord }}</td>
+						<td>{{ row.posTagsSequence }}</td>
+					</tr>
+				</table>
+			</div>
+			
+		</div>
+		
+	</div>
+</div>
+
+
+</body>
+</html>
